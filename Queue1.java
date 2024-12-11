@@ -11,11 +11,11 @@ package queue1;
 public class Queue1 {
 
    
-    private int[] queueArray; // Array to store queue elements
-    private int front;        // Index of the front element
-    private int rear;         // Index of the rear element
-    private int size;         // Current size of the queue
-    private int capacity;     // Maximum size of the queue
+    private int[] queueArray; 
+    private int front;        
+    private int rear;        
+    private int size;         
+    private int capacity;     
 
     // Constructor to initialize the queue
     public Queue1(int capacity) {
@@ -26,15 +26,15 @@ public class Queue1 {
         this.size = 0;
     }
 
-    // Enqueue: Add an element to the rear of the queue
+   
     public void enqueue(int value) {
         if (isFull()) {
             System.out.println("Queue is full. Cannot enqueue " + value);
             return;
         }
-        rear = (rear + 1) % capacity; // Circular increment for rear
+        rear = (rear + 1) % capacity; 
         queueArray[rear] = value;    // Add the value at the rear
-        size++;                      // Increase size
+        size++;                      
         System.out.println("Enqueued: " + value);
     }
 
@@ -46,7 +46,7 @@ public class Queue1 {
         }
         int value = queueArray[front]; // Get the front value
         front = (front + 1) % capacity; // Circular increment for front
-        size--;                         // Decrease size
+        size--;                        
         System.out.println("Dequeued: " + value);
         return value;
     }
